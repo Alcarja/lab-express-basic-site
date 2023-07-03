@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 
+app.use(express.static('public'));
 
 
 app.get('/home', (request, response, next) => {
@@ -18,7 +19,6 @@ app.get('/photoGallery' , (request, response, next) => {
     response.sendFile(__dirname + '/views/photoGallery.html');
 })
 
-app.use(express.static('public'));
 
 
 app.listen(3000, () => {
